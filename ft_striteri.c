@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/17 12:16:39 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/19 16:37:18 by jbrown           ###   ########.fr       */
+/*   Created: 2022/01/19 17:47:48 by jbrown            #+#    #+#             */
+/*   Updated: 2022/01/19 17:52:19 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
+	unsigned int	i;
 
-	if (!s)
-		return (NULL);
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		*(char *)(s + i) = 0;
+		f(i, &s[i]);
 		i++;
 	}
 }
