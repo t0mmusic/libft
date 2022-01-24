@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/19 17:47:48 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/24 17:03:02 by jbrown           ###   ########.fr       */
+/*   Created: 2022/01/24 15:38:35 by jbrown            #+#    #+#             */
+/*   Updated: 2022/01/24 16:09:50 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+t_list	*ft_lstnew(void *content)
 {
-	unsigned int	i;
+	t_list	*newelem;
 
-	i = 0;
-	while (s[i])
-	{
-		f(i, &s[i]);
-		i++;
-	}
+	newelem = malloc(sizeof (*newelem));
+	if (!newelem)
+		return (NULL);
+	r->content = content;
+	r->next = NULL;
+	return (newelem);
 }
