@@ -6,13 +6,13 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 14:55:33 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/19 16:58:40 by jbrown           ###   ########.fr       */
+/*   Updated: 2022/01/20 11:47:21 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	modsize(int n)
+int	modsize(long int n)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ int	modsize(int n)
 	return (i);
 }
 
-int	otherdigits(int n, int factor)
+int	otherdigits(long int n, int factor)
 {
 	int	mod;
 
@@ -38,7 +38,7 @@ int	otherdigits(int n, int factor)
 	return (n % mod);
 }
 
-int	firstdigit(int n, int i)
+int	firstdigit(long int n, int i)
 {
 	while (i)
 	{
@@ -48,7 +48,7 @@ int	firstdigit(int n, int i)
 	return (n);
 }
 
-char	*fillarr(char *arr, int neg, int digits, int n)
+char	*fillarr(char *arr, int neg, int digits, long int n)
 {
 	int	i;
 
@@ -76,6 +76,14 @@ char	*ft_itoa(int n)
 	int		digits;
 	char	*arr;
 
+	if (n == 0)
+	{
+		arr = malloc(sizeof(*arr) * 2);
+		arr[0] = '0';
+		arr[1] = '\0';
+		return (arr);
+	}
+	n = (long int) n;
 	digits = modsize(n);
 	neg = 0;
 	if (n < 0)

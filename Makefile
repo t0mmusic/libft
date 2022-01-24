@@ -6,7 +6,7 @@
 #    By: jbrown <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 11:39:22 by jbrown            #+#    #+#              #
-#    Updated: 2022/01/19 12:05:46 by jbrown           ###   ########.fr        #
+#    Updated: 2022/01/20 13:11:33 by jbrown           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I . -c
 RM = rm -f
 
-SRCS = ft_atoi.c
+SRCS = *.c
 
 OBJS = $(SRCS:.c=.o)
 
