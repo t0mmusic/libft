@@ -6,78 +6,94 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:54:23 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/19 14:55:03 by jbrown           ###   ########.fr       */
+/*   Updated: 2022/01/24 12:59:39 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	strnum(char const *s, char c)
+int	findstring(int first, int last, char c, char *s)
+{
+	last = first;
+	while (s[last] && s[last] != c)
+		last++;
+	return (last);
+}
+
+int	numofstrings(char *s, char c)
 {
 	int	i;
+	int	j;
 
-	i = 1;
-	while (*s)
+	i = 0;
+	j = 0;
+	while (s[j])
 	{
-		if (*s == c)
+		if ((s[j + 1] == c || !(s[j + 1])) && s[j] != c)
 			i++;
-		s++;
+		j++;
 	}
 	return (i);
 }
 
-char	*fillstr(const char *s1, int start, int end, char *s2)
+char	*fillstring(char *s1, char *s2, int first, int last)
 {
 	int	i;
 
-	s2 = malloc((end - start + 1) * sizeof(*s2));
+	s2 = malloc(sizeof(s2) * ((last - first) + 1));
 	if (!s2)
-		return (s2);
+		return (NULL);
 	i = 0;
-	while (start < end)
-		s2[i++] = s1[start++];
+	while ((first + i) < last)
+	{
+		s2[i] = s1[first + i];
+		i++;
+	}
 	s2[i] = '\0';
 	return (s2);
 }
 
-void	freemem(char **s, int len)
+void	freestrings(char **s, int len)
 {
 	int	i;
 
 	i = 0;
-	while (i < len)
+	while (i <= len)
 	{
 		free(s[i]);
 		i++;
 	}
-	free(s);
 }
 
 char	**ft_split(char const *s, char c)
 {
+	int		first;
+	int		last;
 	int		i;
-	int		j;
-	int		mem;
-	char	**ss;
+	char	**strs;
 
-	ss = malloc(sizeof(*ss) * (strnum(s, c) + 1));
-	i = -1;
-	j = 0;
-	mem = 0;
-	while (s[++i])
+	strs = malloc(sizeof(*strs) * (numofstrings((char *) s, c) + 1));
+	if (!strs)
+		return (strs);
+	first = 0;
+	i = 0;
+	while (s[first])
 	{
-		if (s[i] == c || s[i + 1] == '\0')
+		while (s[first] == c)
+			first++;
+		if (s[first])
 		{
-			ss[j] = fillstr(s, mem, i, ss[j]);
-			if (!ss[j])
+			last = findstring(first, last, c, (char *) s);
+			strs[i] = fillstring((char *) s, strs[i], first, last);
+			if (strs[i] == NULL)
 			{
-				freemem(ss, j);
+				freestrings(strs, i);
 				return (NULL);
 			}
-			j++;
-			mem = i + 1;
+			first = last;
 		}
+		i++;
 	}
-	ss[j] = NULL;
-	return (ss);
+	strs[i] = NULL;
+	return (strs);
 }
