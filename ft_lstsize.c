@@ -6,11 +6,11 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 16:04:23 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/24 16:13:16 by jbrown           ###   ########.fr       */
+/*   Updated: 2022/01/25 10:06:31 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_lstsize(t_list *lst)
 {

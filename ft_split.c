@@ -6,15 +6,17 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:54:23 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/24 12:59:39 by jbrown           ###   ########.fr       */
+/*   Updated: 2022/01/25 12:08:39 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	findstring(int first, int last, char c, char *s)
+int	findstring(int *first, int last, char c, char *s)
 {
-	last = first;
+	while (s[*first] == c)
+		(*first)++;
+	last = *first;
 	while (s[last] && s[last] != c)
 		last++;
 	return (last);
@@ -23,28 +25,29 @@ int	findstring(int first, int last, char c, char *s)
 int	numofstrings(char *s, char c)
 {
 	int	i;
-	int	j;
+	int	r;
 
 	i = 0;
-	j = 0;
-	while (s[j])
+	r = 0;
+	while (s[i])
 	{
-		if ((s[j + 1] == c || !(s[j + 1])) && s[j] != c)
-			i++;
-		j++;
+		if ((s[i + 1] == c || !(s[i + 1])) && s[i] != c)
+			r++;
+		i++;
 	}
-	return (i);
+	return (r);
 }
 
-char	*fillstring(char *s1, char *s2, int first, int last)
+char	*fillstring(char *s1, int first, int last)
 {
-	int	i;
+	int		i;
+	char	*s2;
 
-	s2 = malloc(sizeof(s2) * ((last - first) + 1));
+	s2 = malloc(sizeof(*s2) * ((last - first) + 1));
 	if (!s2)
 		return (NULL);
 	i = 0;
-	while ((first + i) < last)
+	while ((first + i) < last && s1[first + i])
 	{
 		s2[i] = s1[first + i];
 		i++;
@@ -63,6 +66,7 @@ void	freestrings(char **s, int len)
 		free(s[i]);
 		i++;
 	}
+	free(s);
 }
 
 char	**ft_split(char const *s, char c)
@@ -77,21 +81,16 @@ char	**ft_split(char const *s, char c)
 		return (strs);
 	first = 0;
 	i = 0;
-	while (s[first])
+	while (s[first] && i < numofstrings((char *) s, c))
 	{
-		while (s[first] == c)
-			first++;
-		if (s[first])
+		last = findstring(&first, last, c, (char *) s);
+		strs[i] = fillstring((char *) s, first, last);
+		if (!strs[i])
 		{
-			last = findstring(first, last, c, (char *) s);
-			strs[i] = fillstring((char *) s, strs[i], first, last);
-			if (strs[i] == NULL)
-			{
-				freestrings(strs, i);
-				return (NULL);
-			}
-			first = last;
+			freestrings(strs, i);
+			return (NULL);
 		}
+		first = last;
 		i++;
 	}
 	strs[i] = NULL;

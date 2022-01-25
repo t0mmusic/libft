@@ -6,20 +6,20 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 16:14:02 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/24 16:24:13 by jbrown           ###   ########.fr       */
+/*   Updated: 2022/01/25 12:22:09 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*tmp;
+	t_list	*t;
 
-	if (lst)
+	if (*lst)
 	{
-		tmp = ft_lstlast(*lst);
-		tmp->next = new;
+		t = ft_lstlast(*lst);
+		t->next = new;
 	}
 	else
 		*lst = new;

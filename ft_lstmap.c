@@ -6,26 +6,34 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 17:03:25 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/24 17:20:27 by jbrown           ###   ########.fr       */
+/*   Updated: 2022/01/25 12:52:47 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	unsigned int	i;
-	t_list			*r;
+	t_list	*tlst;
+	t_list	*nlst;
 
-	r = malloc(sizeof(*r) * (*lst));
-	if (!r)
-		return (r);
-	i = 0;
+	if (!lst || !f || !del)
+		return (NULL);
+	tlst = ft_lstnew(f(lst->content));
+	if (!flst)
+		return (NULL);
+	nlst = flist->next
 	while (lst)
 	{
-		r->content = ft_lstnew(f(lst->content));
-		r = r->next;
+		nlst->content = ft_lstnew(f(lst->content));
+		if (!nlst)
+			ft_lstdelone(nlst, del);
+		else
+		{
+			tlst = nlst;
+			nlst = nlst->next;
+		}
 		lst = lst->next;
 	}
-	return (r);
+	return (tlst);
 }
