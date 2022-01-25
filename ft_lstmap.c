@@ -6,7 +6,7 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/24 17:03:25 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/25 17:12:45 by jbrown           ###   ########.fr       */
+/*   Updated: 2022/01/25 17:42:23 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	{
 		current = ft_lstnew(f(lst->content));
 		if (!current)
-			ft_lstdelone(current, del);
+		{
+			ft_lstclear(&first, del);
+			return (NULL);
+		}
 		else
 			ft_lstadd_back(&first, current);
 		lst = lst->next;
