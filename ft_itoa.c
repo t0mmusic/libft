@@ -6,13 +6,13 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 14:55:33 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/20 11:47:21 by jbrown           ###   ########.fr       */
+/*   Updated: 2022/01/28 09:54:05 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	modsize(long int n)
+static int	modsize(long int n)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ int	modsize(long int n)
 	return (i);
 }
 
-int	otherdigits(long int n, int factor)
+static int	otherdigits(long int n, int factor)
 {
 	int	mod;
 
@@ -38,7 +38,7 @@ int	otherdigits(long int n, int factor)
 	return (n % mod);
 }
 
-int	firstdigit(long int n, int i)
+static int	firstdigit(long int n, int i)
 {
 	while (i)
 	{
@@ -48,7 +48,7 @@ int	firstdigit(long int n, int i)
 	return (n);
 }
 
-char	*fillarr(char *arr, int neg, int digits, long int n)
+static char	*fillarr(char *arr, int neg, int digits, long int n)
 {
 	int	i;
 

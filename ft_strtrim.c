@@ -6,13 +6,13 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:06:05 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/25 12:09:04 by jbrown           ###   ########.fr       */
+/*   Updated: 2022/01/28 10:00:28 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	trimmatch(char c, const char *set)
+static int	trimmatch(char c, const char *set)
 {
 	int	i;
 

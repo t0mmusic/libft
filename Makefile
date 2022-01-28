@@ -6,7 +6,7 @@
 #    By: jbrown <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 11:39:22 by jbrown            #+#    #+#              #
-#    Updated: 2022/01/25 14:51:39 by jbrown           ###   ########.fr        #
+#    Updated: 2022/01/28 09:04:23 by jbrown           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,6 @@ clean:
 fclean:	clean
 	$(RM) $(NAME)
 
-re: fclean $(NAME)
+re: fclean all
 
 .phony: all clean fclean re

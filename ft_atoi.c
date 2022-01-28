@@ -6,13 +6,13 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 14:28:41 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/19 11:46:53 by jbrown           ###   ########.fr       */
+/*   Updated: 2022/01/28 09:49:35 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	checkspace(char c)
+static int	checkspace(char c)
 {
 	if (c == '\t' || c == '\n' || c == '\v'
 		|| c == '\f' || c == '\r' || c == ' ')

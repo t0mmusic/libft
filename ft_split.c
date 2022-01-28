@@ -6,13 +6,13 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:54:23 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/25 12:08:39 by jbrown           ###   ########.fr       */
+/*   Updated: 2022/01/28 10:07:34 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	findstring(int *first, int last, char c, char *s)
+static int	findstring(int *first, int last, char c, char *s)
 {
 	while (s[*first] == c)
 		(*first)++;
@@ -22,7 +22,7 @@ int	findstring(int *first, int last, char c, char *s)
 	return (last);
 }
 
-int	numofstrings(char *s, char c)
+static int	numofstrings(char *s, char c)
 {
 	int	i;
 	int	r;
@@ -38,7 +38,7 @@ int	numofstrings(char *s, char c)
 	return (r);
 }
 
-char	*fillstring(char *s1, int first, int last)
+static char	*fillstring(char *s1, int first, int last)
 {
 	int		i;
 	char	*s2;
@@ -56,7 +56,7 @@ char	*fillstring(char *s1, int first, int last)
 	return (s2);
 }
 
-void	freestrings(char **s, int len)
+static void	freestrings(char **s, int len)
 {
 	int	i;
 
