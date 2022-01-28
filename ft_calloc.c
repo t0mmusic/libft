@@ -6,7 +6,7 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 13:26:54 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/18 13:45:25 by jbrown           ###   ########.fr       */
+/*   Updated: 2022/01/28 13:56:01 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	*ft_calloc(size_t count, size_t size)
 	ptr = malloc(size * count);
 	if (!ptr)
 		return (NULL);
-	ft_bzero(ptr, count);
+	ft_bzero(ptr, count * size);
 	return (ptr);
 }
