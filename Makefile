@@ -6,7 +6,7 @@
 #    By: jbrown <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/19 11:39:22 by jbrown            #+#    #+#              #
-#    Updated: 2022/01/31 09:16:37 by jbrown           ###   ########.fr        #
+#    Updated: 2022/01/31 15:57:58 by jbrown           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ $(NAME):
 
 bonus:
 	$(CC) $(CFLAGS) $(SRCS) $(BONUS_SRCS)
-	ar rcs $(NAME) $(SRCS) $(BONUS_OBJS)
+	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 clean: 
 	$(RM) $(OBJS) $(BONUS_OBJS)
