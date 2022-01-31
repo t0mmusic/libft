@@ -6,7 +6,7 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 17:10:25 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/20 14:33:17 by jbrown           ###   ########.fr       */
+/*   Updated: 2022/01/28 16:04:36 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	int	i;
 
-	if (!dst || !src)
-		return (NULL);
 	if (dst > src)
 	{
 		i = (int) len - 1;

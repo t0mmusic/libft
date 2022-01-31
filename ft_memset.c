@@ -6,7 +6,7 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 09:46:36 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/18 13:07:12 by jbrown           ###   ########.fr       */
+/*   Updated: 2022/01/28 15:53:49 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memset(void *b, int c, size_t length)
 {
 	size_t	i;
 
-	if (!b)
-		return (NULL);
 	i = 0;
 	while (i < length)
 	{

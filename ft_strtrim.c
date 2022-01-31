@@ -6,7 +6,7 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 15:06:05 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/28 10:00:28 by jbrown           ###   ########.fr       */
+/*   Updated: 2022/01/28 14:25:31 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	char	*s2;
 
+	if (!(s1 && set))
+		return (NULL);
 	first = 0;
 	while (trimmatch(s1[first], set) && s1[first])
 		first++;

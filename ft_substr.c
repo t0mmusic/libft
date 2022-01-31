@@ -6,7 +6,7 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 13:47:36 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/24 15:29:10 by jbrown           ###   ########.fr       */
+/*   Updated: 2022/01/28 14:22:52 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t		remainder;
 	size_t		i;
 
+	if (!s)
+		return (NULL);
 	if (start > ft_strlen(s))
 		remainder = 0;
 	else
