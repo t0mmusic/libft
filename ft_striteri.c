@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+/*	applies input function to every element of a string using the current
+	index as the input function's first paramater. */
+
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;

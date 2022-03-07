@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/*	returns a copy of a string beginning from 'start' up to length 'len' */
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char		*sub;

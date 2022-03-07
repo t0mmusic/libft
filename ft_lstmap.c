@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+/*	creates a clone of input list with input function applied to content
+	of every list element. */
+
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*first;

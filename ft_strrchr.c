@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*	searches a string in reverse for a character, 
+	returns a pointer to that character if successful, 
+	otherwise returns NULL. */
+
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;

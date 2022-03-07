@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+/*	compares two pointers to see if they match for 'n' elements. returns
+	the difference if they do not match or zero if the do. */
+
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			i;

@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*	returns a string that is a copy of two other strings concatenated. Since
+	this function does not require that the input strings have been 
+	allocated in heap memory, it does not free them. */
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;

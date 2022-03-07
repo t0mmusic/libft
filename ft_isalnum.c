@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+/*	checks if a character is a letter or a
+	number. */
+
 int	ft_isalnum(int c)
 {
 	if ((c >= 'A' && c <= 'Z')

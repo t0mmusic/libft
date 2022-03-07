@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/*	writes string 's' using file descriptor. */
+
 void	ft_putstr_fd(char *s, int fd)
 {
 	write(fd, s, ft_strlen(s));

@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/*	checks if a character is a letter. */
+
 int	ft_isalpha(int c)
 {
 	if ((c >= 'A' && c <= 'Z')

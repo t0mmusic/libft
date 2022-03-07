@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/*	writes using file descriptor character pointer s followed by newline. */
+
 void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);

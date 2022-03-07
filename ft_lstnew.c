@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/*	creates a new list and adds content. */
+
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*newelem;

@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/*	adds a new list element to the beginning of a list. */
+
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (new)

@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+/*	searches a string for a character, returns a pointer to that character if 
+	successful, otherwise returns NULL. */
+
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;

@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*	clears a single element of a list.
+	This function takes a 'delete' function as it's input
+	paramater which is assumed to free the memory. */
+
 void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	if (lst && del)

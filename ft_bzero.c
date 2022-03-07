@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/*	fills n bytes with null character. */
+
 void	ft_bzero(void *s, size_t n)
 {
 	size_t	i;

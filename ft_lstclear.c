@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*	clears every element of a list given its first element.
+	This function takes a 'delete' function as it's input
+	paramater which is assumed to free the memory. */
+
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*t;

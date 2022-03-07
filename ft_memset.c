@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/*	fills a pointer 'length' number of bytes with 'c' elements. */
+
 void	*ft_memset(void *b, int c, size_t length)
 {
 	size_t	i;

@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+/*	returns number of list elements. */
+
 int	ft_lstsize(t_list *lst)
 {
 	int	i;

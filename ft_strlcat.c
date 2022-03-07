@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+/*	concatenates two strings up to length 'dstsize' and returns the total 
+	length of the new string. */
+
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;

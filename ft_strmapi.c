@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+/*	applies input function to every element of a string and returns a new
+	string with each element being the result of the function. */
+
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
