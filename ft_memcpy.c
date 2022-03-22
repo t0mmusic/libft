@@ -12,9 +12,6 @@
 
 #include "libft.h"
 
-/*	copies 'n' elements from one location to another. This function does
-	not factor for overlapping memory (see memmove). */
-
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	size_t	i;

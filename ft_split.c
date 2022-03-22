@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-/*	finds the beginning and end points of a string using delimiter. */
-
 static int	findstring(int *first, int last, char c, char *s)
 {
 	while (s[*first] == c)
@@ -23,8 +21,6 @@ static int	findstring(int *first, int last, char c, char *s)
 		last++;
 	return (last);
 }
-
-/*	returns a count of the total number of strings to be made. */
 
 static int	numofstrings(char *s, char c)
 {
@@ -41,9 +37,6 @@ static int	numofstrings(char *s, char c)
 	}
 	return (r);
 }
-
-/*	fills a single array using a beginning and end.
-	Note: consider using substring instead. */
 
 static char	*fillstring(char *s1, int first, int last)
 {
@@ -63,9 +56,6 @@ static char	*fillstring(char *s1, int first, int last)
 	return (s2);
 }
 
-/*	free strings in case of memory allocation faliure to prevent
-	memory leaks. */
-
 static void	freestrings(char **s, int len)
 {
 	int	i;
@@ -78,9 +68,6 @@ static void	freestrings(char **s, int len)
 	}
 	free(s);
 }
-
-/*	creates an array of arrays by splitting a single 
-	array using delimitor 'c'. */
 
 char	**ft_split(char const *s, char c)
 {

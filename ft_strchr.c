@@ -6,14 +6,11 @@
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 16:10:40 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/28 15:57:18 by jbrown           ###   ########.fr       */
+/*   Updated: 2022/02/18 14:03:43 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-/*	searches a string for a character, returns a pointer to that character if 
-	successful, otherwise returns NULL. */
 
 char	*ft_strchr(const char *s, int c)
 {

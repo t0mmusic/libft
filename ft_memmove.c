@@ -12,10 +12,6 @@
 
 #include "libft.h"
 
-/*	copies 'n' elements from one location to another. To factor for overlapping
-	memory, this function checks to see if the destination pointer is ahead
-	of the source. If it is, it will copy the elements starting from the end. */
-
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	int	i;

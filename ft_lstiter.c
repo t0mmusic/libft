@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-/*	applies a function to the content of every list element. */
-
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	while (lst)

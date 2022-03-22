@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbrown <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/17 16:49:42 by jbrown            #+#    #+#             */
-/*   Updated: 2022/01/24 10:31:44 by jbrown           ###   ########.fr       */
+/*   Created: 2022/03/23 09:13:09 by jbrown            #+#    #+#             */
+/*   Updated: 2022/03/23 09:13:11 by jbrown           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+int	ft_isspace(int c)
 {
-	size_t	i;
-	size_t	j;
-
-	if (dstsize <= ft_strlen(dst))
-		return (dstsize + ft_strlen(src));
-	i = 0;
-	j = 0;
-	while (dst[i])
-		i++;
-	while ((i + 1) < dstsize && src[j])
-		dst[i++] = src[j++];
-	dst[i] = '\0';
-	return (ft_strlen(dst) + ft_strlen(&src[j]));
+	if (c == '\t' || c == '\n' || c == '\v'
+		|| c == '\f' || c == '\r' || c == ' ')
+		return (1);
+	return (0);
 }

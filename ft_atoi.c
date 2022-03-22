@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-/*	checks to see if the current byte is a space. */
-
 static int	checkspace(char c)
 {
 	if (c == '\t' || c == '\n' || c == '\v'
@@ -21,9 +19,6 @@ static int	checkspace(char c)
 		return (1);
 	return (0);
 }
-
-/*	converts and array into an integer assuming
-	the array contains number characters. */
 
 int	ft_atoi(const char *str)
 {

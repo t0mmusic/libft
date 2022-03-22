@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-/*	checks if a character is a valid match on the ascii table. */
-
 int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)

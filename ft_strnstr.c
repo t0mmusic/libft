@@ -12,10 +12,6 @@
 
 #include "libft.h"
 
-/*	searches a string for a chacter up to length 'len', 
-	returns a pointer to that character if successful, 
-	otherwise returns NULL. */
-
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;

@@ -12,10 +12,6 @@
 
 #include "libft.h"
 
-/*	alocates a pointer to heap memory of a size 
-	(ie, int, char, etc) and a count of that size,
-	then fills the allocated space with null chars. */
-
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;

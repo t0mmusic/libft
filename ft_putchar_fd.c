@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-/*	writes using file descriptor character 'c'. */
-
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);

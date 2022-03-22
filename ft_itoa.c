@@ -12,69 +12,85 @@
 
 #include "libft.h"
 
-/*	Counts the digits in the input number.*/
-
-static int	nbrcount(size_t n, int radix)
+static int	modsize(long int n)
 {
-	int	count;
+	int	i;
 
-	count = 0;
+	i = 0;
 	while (n)
 	{
-		n /= radix;
-		count++;
+		n /= 10;
+		i++;
 	}
-	return (count);
+	return (i);
 }
 
-/*	Assigns the string by taking the modulus of
-	10 of the input number and adding it to the string
-	starting from the end, then dividing the number
-	by 10.*/
-
-static char	*ft_nbrtoa(size_t n, int radix)
+static int	otherdigits(long int n, int factor)
 {
-	int		digits;
-	char	*s;
+	int	mod;
 
-	if (!n)
-		return (ft_strdup("0"));
-	digits = nbrcount(n, radix);
-	s = malloc(sizeof(*s) * (digits + 1));
-	if (!s)
-		return (NULL);
-	s[digits] = '\0';
-	while (--digits > -1)
+	mod = 1;
+	while (factor)
 	{
-		if ((n % radix) > 9)
-			s[digits] = (n % radix) + 87;
-		else
-			s[digits] = (n % radix) + '0';
-		n /= radix;
+		mod *= 10;
+		factor--;
 	}
-	return (s);
+	return (n % mod);
 }
 
-/*	Handles negative numbers by joining a 
-	'-' symbol to the returned number string.*/
+static int	firstdigit(long int n, int i)
+{
+	while (i)
+	{
+		n /= 10;
+		i--;
+	}
+	return (n);
+}
+
+static char	*fillarr(char *arr, int neg, int digits, long int n)
+{
+	int	i;
+
+	i = 0;
+	if (neg)
+	{
+		arr[i] = '-';
+		n = -n;
+		i++;
+	}
+	while (digits)
+	{
+		arr[i] = firstdigit(n, digits - 1) + 48;
+		n = otherdigits(n, digits - 1);
+		digits--;
+		i++;
+	}
+	arr[i] = '\0';
+	return (arr);
+}
 
 char	*ft_itoa(int n)
 {
-	char			*t1;
-	char			*t2;
-	long long int	nbr;
+	int		neg;
+	int		digits;
+	char	*arr;
 
-	nbr = n;
-	if (nbr < 0)
+	if (n == 0)
 	{
-		nbr = -nbr;
-		t1 = ft_nbrtoa(nbr, 10);
-		if (!t1)
-			return (NULL);
-		t2 = t1;
-		t1 = ft_strjoin("-", t1);
-		free (t2);
-		return (t1);
+		arr = malloc(sizeof(*arr) * 2);
+		arr[0] = '0';
+		arr[1] = '\0';
+		return (arr);
 	}
-	return (ft_nbrtoa(nbr, 10));
+	n = (long int) n;
+	digits = modsize(n);
+	neg = 0;
+	if (n < 0)
+		neg = 1;
+	arr = malloc(sizeof(*arr) * (neg + digits + 1));
+	if (!arr)
+		return (NULL);
+	arr = fillarr(arr, neg, digits, n);
+	return (arr);
 }
